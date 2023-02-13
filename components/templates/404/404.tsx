@@ -1,16 +1,20 @@
 import Link from "next/link";
 
 export const PageNotFoundTemplate = () => (
-  <div className="px-6 lg:px-8">
-    <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-          Page Not Found
-        </h1>
-        <p className="mt-2 mb-6">
+  <div
+    className="hero min-h-screen"
+    style={{ backgroundImage: `url("/ian.jpeg")` }}
+  >
+    <div className="hero-overlay bg-opacity-90"></div>
+    <div className="hero-content text-center text-neutral-content">
+      <div className="max-w-md">
+        <h1 className="mb-5 text-5xl font-bold">Page Not Found</h1>
+        <p className="mb-5">
           Sorry, I couldn&apos;t find the page you were looking for.
         </p>
-        <Link href="/">Go Home &rarr;</Link>
+        <Link href="/" passHref>
+          <button className="btn btn-primary">Go Home &rarr;</button>
+        </Link>
       </div>
     </div>
   </div>
