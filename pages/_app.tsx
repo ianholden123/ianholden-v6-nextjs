@@ -7,11 +7,12 @@ export default function App({ Component, pageProps }) {
   return (
     <>
       <Scripts />
-      <SiteNavigation />
-      <main>
-        <Component {...pageProps} />
-      </main>
-      <Footer />
+      <SiteNavigation>
+        <main>
+          <Component {...pageProps} />
+        </main>
+        <Footer />
+      </SiteNavigation>
     </>
   );
 }

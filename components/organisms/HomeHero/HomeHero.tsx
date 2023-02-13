@@ -1,13 +1,15 @@
 export const HomeHero = () => (
-  <div className="relative px-6 lg:px-8">
-    <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl uppercase">
+  <div
+    className="hero min-h-screen"
+    style={{ backgroundImage: `url("/ian.jpeg")` }}
+  >
+    <div className="hero-overlay bg-opacity-80"></div>
+    <div className="hero-content text-center text-neutral-content">
+      <div className="max-w-md">
+        <h1 className="mb-5 text-6xl font-bold tracking-tight uppercase">
           Ian Holden
         </h1>
-        <p className="mt-1 text-3xl sm:text-4xl leading-8 text-gray-600 uppercase">
-          Software Engineer
-        </p>
+        <p className="mb-5 text-3xl leading-8 uppercase">Software Engineer</p>
       </div>
     </div>
   </div>
