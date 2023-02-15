@@ -3,7 +3,7 @@ import Link from "next/link";
 export const PageNotFoundTemplate = () => (
   <div
     className="hero min-h-screen"
-    style={{ backgroundImage: `url("/ian.jpeg")` }}
+    style={{ backgroundImage: `url("/ianHero.jpeg")` }}
   >
     <div className="hero-overlay bg-opacity-90"></div>
     <div className="hero-content text-center text-neutral-content">
