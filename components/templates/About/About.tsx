@@ -1,4 +1,5 @@
 import { Container } from "@/components/atoms/Container";
+import { Album } from "@/components/atoms/Album";
 import Image from "next/image";
 
 export const AboutTemplate = ({ albums }) => (
@@ -36,9 +37,17 @@ export const AboutTemplate = ({ albums }) => (
     </div>
     <h2>Albums I&apos;ve been listening to this month</h2>
     <div className="columns-3">
-      <p>Yes</p>
-      <p>Yes</p>
-      <p>Yes</p>
+      {albums.map(({ artist, image, name }) => (
+        <Album
+          artist={artist}
+          imageAlt={`${name} by ${artist} album cover`}
+          imageHeight={300}
+          imageSrc={image[3]["#text"]}
+          imageWidth={300}
+          key={name}
+          name={name}
+        />
+      ))}
     </div>
   </Container>
 );
