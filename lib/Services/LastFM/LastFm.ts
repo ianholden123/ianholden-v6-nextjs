@@ -1,5 +1,5 @@
 import { TTransformTopAlbums } from "./LastFm.types";
-import { LAST_FM_URL } from "@/lib/Constants";
+import constants from "@/lib/Constants";
 
 const transformTopAlbums: TTransformTopAlbums = (albums) =>
   albums?.map((album) => ({
@@ -20,7 +20,7 @@ export async function fetchTopAlbums() {
     };
     const urlParams = new URLSearchParams(params).toString();
 
-    const res = await fetch(`${LAST_FM_URL}?${urlParams}`);
+    const res = await fetch(`${constants.LAST_FM_URL}?${urlParams}`);
     const data = await res.json();
 
     return transformTopAlbums(data?.topalbums?.album);

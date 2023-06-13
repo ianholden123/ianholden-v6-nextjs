@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { fetchTopAlbums } from "@/lib/LastFM";
+import { fetchTopAlbums } from "@/lib/Services/LastFM";
 import { AboutPage } from "@/components/pages/About";
 
 export default function Home({ albums }) {
