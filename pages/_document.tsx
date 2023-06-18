@@ -1,5 +1,6 @@
 import { Html, Head, Main, NextScript } from "next/document";
 import { Favicons } from "@/components/_miscellaneous/favicons";
+import { MeticulousScript } from "@/components/_miscellaneous/scripts/script-meticulous";
 
 export default function Document() {
   return (
@@ -12,6 +13,7 @@ export default function Document() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="robots" content="noindex" />
         <Favicons />
+        <MeticulousScript />
       </Head>
       <body>
         <Main />
