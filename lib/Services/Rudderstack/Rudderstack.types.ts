@@ -14,3 +14,10 @@ export type TTrackPage = (
   name?: string,
   properties?: TTrackPageProperties
 ) => void;
+
+type TTrackEventProperties = Record<string, unknown>;
+
+export type TTrackEvent = (
+  name: string,
+  properties?: TTrackEventProperties
+) => void;
