@@ -7,7 +7,7 @@ import {
 } from "./Rudderstack.types";
 
 // Middleware will automatically set a cookie for the user if they visit a page
-const sessionUUID = Cookies.get(constants.uuid_cookie);
+const sessionUUID = Cookies.get(constants.UUID_COOKIE);
 
 const commonProperties = {
   statsigCustomIDs: ["sessionUUID", sessionUUID],
