@@ -1,10 +1,11 @@
+import Image from "next/image";
 import { Container } from "@/components/atoms/Container";
 import { Album } from "@/components/atoms/Album";
-import Image from "next/image";
+import { TAboutTemplate } from "./About.types";
 
-export const AboutTemplate = ({ albums }) => (
+export const AboutTemplate: TAboutTemplate = ({ albums }) => (
   <Container>
-    <div className="grid grid-cols-2 gap-4">
+    <section className="grid grid-cols-2 gap-4">
       <div className="relative">
         <Image
           src="/ianHeadshot.jpeg"
@@ -17,7 +18,7 @@ export const AboutTemplate = ({ albums }) => (
         />
       </div>
       <div className="my-8">
-        <h1>About Me!</h1>
+        <h1>About Me</h1>
         <p>My name is Ian Holden.</p>
         <p>I&apos;m a Software Engineer.</p>
         <p>
@@ -34,20 +35,19 @@ export const AboutTemplate = ({ albums }) => (
           systems and managing integrations within a microservices architecture.
         </p>
       </div>
-    </div>
-    <h2>Albums I&apos;ve been listening to this month</h2>
-    <div className="columns-3">
-      {albums.map(({ artist, image, name }) => (
-        <Album
-          artist={artist}
-          imageAlt={`${name} by ${artist} album cover`}
-          imageHeight={300}
-          imageSrc={image[3]["#text"]}
-          imageWidth={300}
-          key={name}
-          name={name}
-        />
-      ))}
-    </div>
+    </section>
+    <section>
+      <h2>Albums I&apos;ve been listening to this month</h2>
+      <div className="columns-3">
+        {albums.map(({ artist, image, name }) => (
+          <Album
+            artist={artist}
+            imageSrc={image[3]["#text"]}
+            key={name}
+            name={name}
+          />
+        ))}
+      </div>
+    </section>
   </Container>
 );

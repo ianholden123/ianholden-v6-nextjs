@@ -1,9 +1,6 @@
 type TAlbumProps = {
   artist: string;
-  imageHeight: number;
-  imageAlt: string;
   imageSrc: string;
-  imageWidth: number;
   name: string;
 };
 

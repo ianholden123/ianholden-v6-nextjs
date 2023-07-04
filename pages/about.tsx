@@ -1,8 +1,8 @@
 import Head from "next/head";
-import { fetchTopAlbums } from "@/lib/Services/LastFM";
+import { fetchAlbums } from "@/lib/Services/LastFM";
 import { AboutPage } from "@/components/pages/About";
 
-export default function Home({ albums }) {
+export default function About({ albums }) {
   return (
     <>
       <Head>
@@ -18,6 +18,6 @@ export default function Home({ albums }) {
 }
 
 export async function getStaticProps() {
-  const albums = await fetchTopAlbums();
+  const albums = await fetchAlbums({ period: "1month", limit: "3" });
   return { props: { albums } };
 }
