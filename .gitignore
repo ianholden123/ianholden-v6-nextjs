@@ -34,3 +34,5 @@ yarn-error.log*
 
 # TypeScript
 next-env.d.ts
+# Sentry Auth Token
+.sentryclirc
