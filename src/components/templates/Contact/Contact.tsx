@@ -1,3 +1,5 @@
+"use client";
+
 import { trackEvent } from "@/lib/Services/Rudderstack";
 
 export const ContactTemplate = () => {
@@ -18,7 +20,7 @@ export const ContactTemplate = () => {
       </p>
       <a
         href="mailto:ianholdendev@outlook.com"
-        className="btn btn-neutral btn-wide mr-5"
+        className="btn btn-primary btn-wide mr-5"
         onClick={() =>
           handleButtonClick("Email", "mailto:ianholdendev@outlook.com")
         }

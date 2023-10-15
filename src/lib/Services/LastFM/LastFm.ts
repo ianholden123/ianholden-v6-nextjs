@@ -1,7 +1,7 @@
 import { TTransformAlbums, TFetchAlbums } from "./LastFm.types";
 import constants from "@/lib/Constants";
 
-const transformAlbums: TTransformAlbums = (albums) =>
+export const transformAlbums: TTransformAlbums = (albums) =>
   albums?.map((album) => ({
     artist: album?.artist?.name,
     image: album?.image,
@@ -9,21 +9,22 @@ const transformAlbums: TTransformAlbums = (albums) =>
   }));
 
 export const fetchAlbums: TFetchAlbums = async ({ ...args }) => {
-  try {
-    const params = {
-      method: "user.gettopalbums",
-      user: process.env.LASTFM_USERNAME,
-      api_key: process.env.LASTFM_API_KEY,
-      format: "json",
-      ...args,
-    };
-    const urlParams = new URLSearchParams(params).toString();
+  const params = {
+    method: "user.gettopalbums",
+    user: process.env.LASTFM_USERNAME,
+    api_key: process.env.LASTFM_API_KEY,
+    format: "json",
+    ...args,
+  };
+  const urlParams = new URLSearchParams(params).toString();
 
-    const res = await fetch(`${constants.LAST_FM_URL}?${urlParams}`);
-    const data = await res.json();
+  const res = await fetch(`${constants.LAST_FM_URL}?${urlParams}`, {
+    next: { revalidate: 86400 },
+  });
 
-    return transformAlbums(data?.topalbums?.album);
-  } catch (e) {
+  if (!res.ok) {
     throw new Error(`Couldn't fetch album information`);
   }
+
+  return res.json();
 };

@@ -12,6 +12,8 @@ export type TTransformedAlbum = {
 
 export type TTransformAlbums = (albums: TLastFMAlbum[]) => TTransformedAlbum[];
 
-export type TFetchAlbums = (
-  args: Record<string, unknown>
-) => Promise<TTransformedAlbum[]>;
+export type TFetchAlbums = (args: Record<string, unknown>) => Promise<{
+  topalbums: {
+    album: TLastFMAlbum[];
+  };
+}>;
