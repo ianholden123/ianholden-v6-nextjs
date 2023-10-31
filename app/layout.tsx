@@ -1,7 +1,4 @@
-import Cookies from "js-cookie";
-import { StatsigProvider } from "statsig-react";
 import "@/styles/globals.css";
-import constants from "@/lib/Constants";
 import { usePageViewTracking } from "@/lib/Hooks/usePageViewTracking";
 import { Favicons } from "@/components/_miscellaneous/favicons";
 import { MeticulousScript } from "@/components/_miscellaneous/scripts/script-meticulous";
@@ -17,9 +14,6 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  // Middleware will automatically set a cookie for the user if they visit a page
-  const sessionUUID = Cookies.get(constants.UUID_COOKIE);
-
   // usePageViewTracking();
 
   return (
@@ -27,24 +21,11 @@ export default function RootLayout({ children }) {
       <body>
         <Favicons />
         <MeticulousScript />
-        {/* <StatsigProvider
-          sdkKey={process.env.NEXT_PUBLIC_STATSIG_CLIENT_API_KEY}
-          waitForInitialization={true}
-          user={{
-            customIDs: {
-              sessionUUID,
-            },
-          }}
-          options={{
-            environment: { tier: process.env.NODE_ENV },
-          }}
-        > */}
         <Scripts />
         <SiteNavigation>
           <main>{children}</main>
           <Footer />
         </SiteNavigation>
-        {/* </StatsigProvider> */}
       </body>
     </html>
   );
