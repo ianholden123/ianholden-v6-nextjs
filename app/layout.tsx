@@ -1,5 +1,4 @@
 import "@/styles/globals.css";
-import { usePageViewTracking } from "@/lib/Hooks/usePageViewTracking";
 import { Favicons } from "@/components/_miscellaneous/favicons";
 import { MeticulousScript } from "@/components/_miscellaneous/scripts/script-meticulous";
 import { Scripts } from "@/components/_miscellaneous/scripts";
@@ -14,8 +13,6 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  // usePageViewTracking();
-
   return (
     <html lang="en">
       <body>
