@@ -1,14 +1,15 @@
 import Link from "next/link";
+import "./Footer.css";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="footer items-center p-4 bg-neutral">
-      <div className="items-center grid-flow-col">
+    <footer className="footer">
+      <div className="footer-left">
         <Link href="/">Ian Holden</Link>
       </div>
-      <div className="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
+      <div className="footer-right">
         Socials
       </div>
     </footer>

@@ -2,11 +2,12 @@ import Image from "next/image";
 import { Container } from "@/components/atoms/Container";
 import { Album } from "@/components/atoms/Album";
 import { TAboutTemplate } from "./About.types";
+import "./About.css";
 
 export const AboutTemplate: TAboutTemplate = ({ albums }) => (
   <Container>
-    <section className="grid grid-cols-2 gap-4">
-      <div className="relative">
+    <section className="about-section">
+      <div className="about-image-wrapper">
         <Image
           src="/ianHeadshot.jpeg"
           alt="Ian Holden headshot"
@@ -17,7 +18,7 @@ export const AboutTemplate: TAboutTemplate = ({ albums }) => (
           }}
         />
       </div>
-      <div className="my-8">
+      <div className="about-content">
         <h1>About Me</h1>
         <p>My name is Ian Holden.</p>
         <p>I&apos;m a Software Engineer.</p>
@@ -36,16 +37,17 @@ export const AboutTemplate: TAboutTemplate = ({ albums }) => (
         </p>
       </div>
     </section>
-    <section>
+    <section className="about-albums-section">
       <h2>Albums I&apos;ve been listening to this month</h2>
-      <div className="columns-3">
+      <div className="about-albums-grid">
         {albums.map(({ artist, image, name }) => (
-          <Album
-            artist={artist}
-            imageSrc={image[3]["#text"]}
-            key={name}
-            name={name}
-          />
+          <div key={name} className="about-album-item">
+            <Album
+              artist={artist}
+              imageSrc={image[3]["#text"]}
+              name={name}
+            />
+          </div>
         ))}
       </div>
     </section>

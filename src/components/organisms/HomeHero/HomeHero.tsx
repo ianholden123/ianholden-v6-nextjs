@@ -1,15 +1,17 @@
+import "./HomeHero.css";
+
 export const HomeHero = () => (
   <div
-    className="hero min-h-screen"
+    className="hero"
     style={{ backgroundImage: `url("/ianHero.jpeg")` }}
   >
-    <div className="hero-overlay bg-opacity-80"></div>
-    <div className="hero-content text-center text-neutral-content">
-      <div className="max-w-md">
-        <h1 className="mb-5 text-6xl font-bold tracking-tight uppercase">
+    <div className="hero-overlay"></div>
+    <div className="hero-content">
+      <div className="hero-content-inner">
+        <h1 className="hero-title">
           Ian Holden
         </h1>
-        <p className="mb-5 text-3xl leading-8 uppercase">Software Engineer</p>
+        <p className="hero-subtitle">Software Engineer</p>
       </div>
     </div>
   </div>

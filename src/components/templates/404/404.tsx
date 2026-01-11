@@ -1,19 +1,20 @@
 import Link from "next/link";
+import "./404.css";
 
 export const PageNotFoundTemplate = () => (
   <div
-    className="hero min-h-screen"
+    className="hero"
     style={{ backgroundImage: `url("/ianHero.jpeg")` }}
   >
-    <div className="hero-overlay bg-opacity-90"></div>
-    <div className="hero-content text-center text-neutral-content">
-      <div className="max-w-md">
-        <h1 className="mb-5 text-5xl font-bold">Page Not Found</h1>
-        <p className="mb-5">
+    <div className="hero-overlay hero-overlay-dark"></div>
+    <div className="hero-content">
+      <div className="hero-content-inner">
+        <h1 className="hero-title-small">Page Not Found</h1>
+        <p className="hero-text">
           Sorry, I couldn&apos;t find the page you were looking for.
         </p>
-        <Link href="/" passHref>
-          <button className="btn btn-primary">Go Home &rarr;</button>
+        <Link href="/" className="btn btn-primary">
+          Go Home &rarr;
         </Link>
       </div>
     </div>
