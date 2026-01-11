@@ -1,6 +1,7 @@
 "use client";
 
 import { trackEvent } from "@/lib/Services/Rudderstack";
+import "./Contact.css";
 
 export const ContactTemplate = () => {
   const handleButtonClick = (linkName: string, href: string) => {
@@ -11,7 +12,7 @@ export const ContactTemplate = () => {
   };
 
   return (
-    <div className="prose container py-10">
+    <div className="contact-container container">
       <h1>Contact Ian</h1>
       <p>
         If you would like to work with me on a project, I would be more than
@@ -20,7 +21,7 @@ export const ContactTemplate = () => {
       </p>
       <a
         href="mailto:ianholdendev@outlook.com"
-        className="btn btn-primary btn-wide mr-5"
+        className="contact-button contact-button-primary"
         onClick={() =>
           handleButtonClick("Email", "mailto:ianholdendev@outlook.com")
         }
@@ -29,7 +30,7 @@ export const ContactTemplate = () => {
       </a>
       <a
         href="https://www.linkedin.com/in/ianlewisholden"
-        className="btn btn-neutral btn-wide mt-4 md:mt-0"
+        className="contact-button contact-button-neutral"
         onClick={() =>
           handleButtonClick(
             "LinkedIn",

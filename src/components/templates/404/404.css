@@ -1,0 +1,3 @@
+/* 404 page uses hero styles, so we import them */
+@import "../../organisms/HomeHero/HomeHero.css";
+@import "../../atoms/Button/Button.css";

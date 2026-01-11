@@ -1,7 +1,8 @@
 import { TContainer } from "./Container.types";
+import "./Container.css";
 
 export const Container: TContainer = ({ children, ...divProps }) => (
-  <div className="container mx-auto" {...divProps}>
+  <div className="container" {...divProps}>
     {children}
   </div>
 );

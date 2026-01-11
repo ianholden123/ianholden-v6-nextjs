@@ -1,0 +1,27 @@
+:root {
+  /* Colors */
+  --color-primary: #517ea6;
+  --color-secondary: #c892e5;
+  --color-accent: #5959db;
+  --color-neutral: #e5e6e6;
+  --color-info: #2db2e6;
+  --color-success: #20a783;
+  --color-warning: #fca94f;
+  --color-error: #e14e37;
+  
+  /* Spacing */
+  --spacing-1: 0.25rem;
+  --spacing-2: 0.5rem;
+  --spacing-4: 1rem;
+  --spacing-5: 1.25rem;
+  --spacing-6: 1.5rem;
+  --spacing-8: 2rem;
+  --spacing-10: 2.5rem;
+  
+  /* Container */
+  --container-padding: 1rem;
+  --container-max-width: 1280px;
+  
+  /* Transitions */
+  --transition-default: 300ms ease-in-out;
+}
